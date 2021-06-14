@@ -10,7 +10,7 @@ PTV Visum does not currently offer a built-in exporter for data in GeoJSON forma
 
 
 ## Requirements
-The tool requires the use of the `shapely` Python module which is not currently available with the standard PTV Visum installation. In order for the tool to run successfully, it is required that a Python environment is created that includes this module. It is suggested that [Anaconda](https://www.anaconda.com/) is used for this and `shapely` is installed in the environment.
+The tool only requires Python modules that are included in the Visum built-in environment and hence no other Python installation is required.
 
 This tool has been designed to work with Visum 2021, but can be simply updated to work with other versions of Visum. Users of this tool are assumed to be familiar with PTV Visum and Transport Modelling terminology. For more info about PTV Visum, please visit: https://www.ptvgroup.com/en/solutions/products/ptv-visum/.
 
@@ -22,8 +22,8 @@ There are two options for running the tool:
 
 ### Within Visum
 
-The first option is designed to require minimal user intervention and be set up as a part of a standard model running procedure. It can be set up as a 'Run script' procedure that links to the `GeoJSON.py` file, with the layout files that define the data to be exported saved in a 'GeoJSON Layouts' folder in the same location as the script file. The only user intervention required to get the script to run is to update the folder path on **<span style="color:red"> line X </span>** with the location of the Python environment that contains `shapely`. The script will then export the data into the same folder as the version file.
+The first option is designed to require minimal user intervention and be set up as a part of a standard model running procedure. It can be set up as a 'Run script' procedure that links to the `GeoJSON.py` file, with the layout files that define the data to be exported saved in a 'GeoJSON Layouts' folder in the same location as the script file. The script will then export the data into the same folder as the version file.
 
 
 ### Outside of Visum
-The second option is for processing data from a model that has already been run and saved. The script can be run externally to Visum from the environment in which `shapely` is installed. A file selection dialog will first appear in which the user should select the Visum version file, before a folder selection where the user can select the folder containing the layout files defining the data to be exported. The tool will then run and export the data into the same folder as the script.
+The second option is for processing data from a model that has already been run and saved. The script can be run externally to Visum either using the Visum Python environment, or using another environment with the same packages. A file selection dialog will first appear in which the user should select the Visum version file, before a folder selection where the user can select the folder containing the layout files defining the data to be exported. The tool will then run and export the data into the same folder as the version file.

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listLayoutItem no="0">
+	<listLayoutCommonEntries activeNetObjectsFilter="false" baseEntriesBinaryNo="12056" crossSection="false" layoutIdentifier="LIST_LAYOUT_NODE" listTitle="List (Nodes)" specialEntriesBinaryNo="2100" statisticsRowAverage="false" statisticsRowMaximum="false" statisticsRowMinimum="false" statisticsRowSum="false" synchroMode="MARK">
+		<attributeDefinitions>
+			<attributeDefinition aggregate="false" aggregationFunction="COUNT" alignment="RIGHTALIGNMENT" attributeID="NO" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="COMPARE" alignment="LEFTALIGNMENT" attributeID="TYPENO" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="COMPARE" alignment="LEFTALIGNMENT" attributeID="CONTROLTYPE" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="AVG" alignment="RIGHTALIGNMENT" attributeID="XCOORD" displayUnits="false" numberOfDecimalPlaces="4" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="AVG" alignment="RIGHTALIGNMENT" attributeID="YCOORD" displayUnits="false" numberOfDecimalPlaces="4" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="SUM" alignment="RIGHTALIGNMENT" attributeID="T0PRT" displayUnits="true" numberOfDecimalPlaces="0" stringFormatType="MINUTES" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="SUM" alignment="RIGHTALIGNMENT" attributeID="VOLPRT" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="EMPTY" alignment="LEFTALIGNMENT" attributeID="WKTLOCWGS84" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+			<attributeDefinition aggregate="false" aggregationFunction="SUM" alignment="RIGHTALIGNMENT" attributeID="VOLDEMPRT" displayUnits="false" numberOfDecimalPlaces="0" stringFormatType="DEFAULTFMT" subAttributeID1="" subAttributeID2="" subAttributeID3="" useThousandsSeparator="false" weightedAverageAttribute="1.0"/>
+		</attributeDefinitions>
+		<columnWidths>
+			<columnWidth width="60"/>
+			<columnWidth width="64"/>
+			<columnWidth width="88"/>
+			<columnWidth width="75"/>
+			<columnWidth width="75"/>
+			<columnWidth width="52"/>
+			<columnWidth width="60"/>
+			<columnWidth width="121"/>
+			<columnWidth width="85"/>
+		</columnWidths>
+		<fontDefinition characterSet="0" clipPrecision="0" escapement="0" faceName="Arial" height="-22" italic="false" orientation="0" outPrecision="0" pitchAndFamily="0" quality="0" strikeOut="false" underline="false" weight="400" width="0"/>
+		<initialColumnSortings/>
+	</listLayoutCommonEntries>
+	<listGraphicParameterLayoutItems netObjectType="NODE">
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+		<listGraphicParameters mode="BYEDITABILITY" usePassiveGraphicParameters="false">
+			<display>
+				<active classificationAttrID="NO" numDecPlaces="0" useClassifiedMode="false" useLayerOrder="false">
+					<uniform backgroundColor="ffffffff" textColor="ff000000"/>
+					<classified>
+						<class hasCustomLegendName="false" layerNo="1" legendName="&gt; " stringValue="*" upperLimit="INF">
+							<contents backgroundColor="ffffffff" textColor="ff000000"/>
+						</class>
+					</classified>
+				</active>
+				<passive>
+					<uniform backgroundColor="ffa8a8a8" textColor="ff000000"/>
+				</passive>
+			</display>
+		</listGraphicParameters>
+	</listGraphicParameterLayoutItems>
+	<specialListSettings/>
+	<columnFilters>
+		<columnFilter>
+			<filterCriterionNumericInt active="false" criterionType="EQUALS" filterValue="0" filterValueAdditional="0" filterValueTopBottom="1"/>
+		</columnFilter>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+		<columnFilter/>
+	</columnFilters>
+</listLayoutItem>

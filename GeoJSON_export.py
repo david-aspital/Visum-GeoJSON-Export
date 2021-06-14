@@ -1,30 +1,25 @@
-import json
 import sys
 import os
+import json
 import glob
 import tempfile
+import wx
 import pandas as pd
 import win32com.client
-import shapely.wkt
-import shapely.geometry
+from osgeo import ogr
 from pathlib import Path
-import exports as exp
-import dialogs as dlg
+from src import exports as exp
+from src import dialogs as dlg
 import xml.etree.ElementTree as ET
 
-Visum = None
-
 wkt_col_names = ['WKTPOLYWGS84', 'WKTLOCWGS84', 'WKTSURFACEWGS84']
-visum_lists = {'ZONE' : Visum.Lists.CreateZoneList,
-               'LINK' : Visum.Lists.CreateLinkList,
-               'NODE' : Visum.Lists.CreateNodeList}
 
 def wkt2geometry(df, wkt_col):
     # Create list of WKT values, apply conversion to geometry and create new column
     wkt_list = df[wkt_col].tolist()
     out_list = []
     for s in wkt_list:
-        out_list.append(json.dumps(shapely.geometry.mapping(shapely.wkt.loads(s))))
+        out_list.append(ogr.CreateGeometryFromWkt(s).ExportToJson())
     df[f'Geom_{wkt_col}'] = out_list
     return df
 
@@ -58,8 +53,8 @@ def get_llax_files(folder):
 def get_visum_object(llax):
     # Get Visum object from .llax file
     root = ET.parse(llax).getroot()
-    for tag in root.findall('listLayoutItem/listLayoutCommonEntries'):
-        obj = tag.get('layoutIdentifier').replace('LIST_LAYOUT_')
+    for tag in root.findall('listLayoutCommonEntries'):
+        obj = tag.get('layoutIdentifier').replace('LIST_LAYOUT_','')
     return obj
 
 def get_wkt_cols(df):
@@ -72,8 +67,13 @@ def get_wkt_cols(df):
     return wkt_cols
 
 def process_llax(llax, Visum, temp_path, filter=False):
+
+    visum_lists = {'ZONE' : Visum.Lists.CreateZoneList,
+               'LINK' : Visum.Lists.CreateLinkList,
+               'NODE' : Visum.Lists.CreateNodeList}
+
     obj = get_visum_object(llax)
-    df = exp.create_data_frame(visum_lists[obj], llax, temp_path, filter)
+    df = exp.create_data_frame(visum_lists[obj], os.path.basename(llax), os.path.dirname(llax), temp_path, filter)
     wkt_cols = get_wkt_cols(df)
     df = cols2properties(df)
     for col in wkt_cols:
@@ -82,17 +82,19 @@ def process_llax(llax, Visum, temp_path, filter=False):
         feature_list = df[f'Feat_{col}'].tolist()
         feature_collection = '{"type": "FeatureCollection",  "features": ['+','.join(feature_list)+']}'
         output = json.loads(feature_collection)
+        out_folder = os.path.dirname(Visum.IO.CurrentVersionFile)
+        out_name = os.path.basename(llax)
         if len(wkt_cols) > 1:
-            out_name = f'{llax}_{col.replace("WKT","").replace("WGS84", "")}.geojson'
+            out_path = f'{out_folder}\\{out_name.replace(".llax", "")}_{col.replace("WKTLOCWGS84","Point").replace("WKTSURFACEWGS84", "Polygon")}.geojson'
         else:
-            out_name = f'{llax}.geojson'
-        with open(out_name, 'w') as f:
-            f.write(json.dumps(feature_collection, indent=4, sort_keys=True))
+            out_path = f'{out_folder}\\{out_name.replace(".llax", "")}.geojson'
+        with open(out_path, 'w') as f:
+            f.write(json.dumps(output, indent=4, sort_keys=True))
 
 
-def export_from_current(temp_path):
-    sys.path.append(f"C:\\Users\\{os.getusername()}\\Anaconda3\\envs\\GeoJSON\\Lib\\site-packages")
-
+def export_from_current(Visum, temp_path):
+    # Export the data from the current version file (run from inside Visum)
+    
     llax_folder = os.path.join(os.path.dirname(Visum.IO.CurrentVersionFile), 'GeoJSON llax')
 
     # Get llax files for processing
@@ -103,11 +105,12 @@ def export_from_current(temp_path):
         process_llax(llax, Visum, temp_path)
 
 def export_from_version(visum_versionNo, temp_path):
-    # 
+    # Export data from a linked version file (run externally to Visum)
 
     # Select ver path and llax folder path
-    ver_path = dlg.file_select_dlg("Please select a Visum version file...", "Version |*.ver")
-    llax_folder = dlg.folder_select_dlg("Please select a folder containing layout files...",os.curdir())
+    app = wx.App()
+    ver_path = dlg.file_select_dlg("Please select a Visum version file...", "Version (.ver)|*.ver")
+    llax_folder = dlg.folder_select_dlg("Please select a folder containing layout files...",os.path.dirname(ver_path))
 
     # Get llax files for processing
     llax_files = get_llax_files(llax_folder)
@@ -115,7 +118,7 @@ def export_from_version(visum_versionNo, temp_path):
     # Launch Visum 
     Visum = win32com.client.Dispatch(f"Visum.Visum.{visum_versionNo}")
     Visum.IO.LoadVersion(ver_path)
-
+ 
     # Loop through llax files and export data
     for llax in llax_files:
         process_llax(llax, Visum, temp_path)
